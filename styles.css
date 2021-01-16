@@ -1,15 +1,38 @@
-﻿* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+﻿
 body {
     height: 100vh;
-    display: flex;
     background: #060AB2;
 }
 
+@font-face {
+    font-family: 'UI';
+    src: url("KOMIKAX_.ttf")
+}
+#UI {
+    font-family: 'UI';
+}
+.button {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid black;
+    color: white;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    background-color: #00b9f1;
+    background-image: -webkit-linear-gradient(bottom, #00b9f1 0%, #0081b4 100%);
+    background-image: linear-gradient(to bottom, #00b9f1 0%, #0081b4 100%);
+    border-radius: 5px;
+}
+    .button:hover {
+        background-color: #0081b4;
+        background-image: -webkit-linear-gradient(bottom, #0081b4 0%, #00b9f1 100%);
+        background-image: linear-gradient(to bottom, #0081b4 0%, #00b9f1 100%);
+    }
 .memory-game {
+    display: flex;
     width: 640px;
     height: 640px;
     margin: auto;

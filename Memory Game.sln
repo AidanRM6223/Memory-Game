@@ -23,16 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{52CBC7D0-272
 		img\vue.svg = img\vue.svg
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{533AB6C9-14E5-4906-AF7C-59D46932FBB2}"
-	ProjectSection(SolutionItems) = preProject
-		img\images\cursor.png = img\images\cursor.png
-		img\images\images.jpg = img\images\images.jpg
-		img\images\Me.jpg = img\images\Me.jpg
-		img\images\ref.jpg = img\images\ref.jpg
-		img\images\unnamed.png = img\images\unnamed.png
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{59649BAE-2D6F-4D85-8281-5668E9409757}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{721DF50A-C93B-49C0-BECA-FEF2660BD1E7}"
 	ProjectSection(SolutionItems) = preProject
 		img\images\New Folder\1.jpg = img\images\New Folder\1.jpg
 		img\images\New Folder\10.jpg = img\images\New Folder\10.jpg
@@ -69,14 +60,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{59649B
 		img\images\New Folder\9.jpg = img\images\New Folder\9.jpg
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cards", "cards", "{2673D7A5-182C-44FF-A6FB-C9E4866D8962}"
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{52CBC7D0-2725-4F50-AA89-4E7EBA9E2876} = {D85EE093-334C-4956-9763-EE946E4242FB}
-		{533AB6C9-14E5-4906-AF7C-59D46932FBB2} = {52CBC7D0-2725-4F50-AA89-4E7EBA9E2876}
-		{59649BAE-2D6F-4D85-8281-5668E9409757} = {533AB6C9-14E5-4906-AF7C-59D46932FBB2}
+		{721DF50A-C93B-49C0-BECA-FEF2660BD1E7} = {52CBC7D0-2725-4F50-AA89-4E7EBA9E2876}
+		{2673D7A5-182C-44FF-A6FB-C9E4866D8962} = {52CBC7D0-2725-4F50-AA89-4E7EBA9E2876}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0A03997B-0997-4B2F-8026-6998E5044EC5}

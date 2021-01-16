@@ -4,16 +4,20 @@ var hasFlippedCard = false;
 var lockBoard = false;
 var firstCard, secondCard;
 
-var type, numOfPairs;
-var cardIDs = ["card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10"];
-var cardIMGs = ["img/", "img/", "img/", "img/", "img/", "img/", "img/", "img/", "img/", "img/"];
+var type, numOfPairs = 3;
+var cardIDs = ["card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "card11", "card12"];
+var cardIMGs = ["img/cards/card1.png", "img/cards/card2.png", "img/cards/card3.png", "img/cards/card4.png", "img/cards/card5.png", "img/cards/card6.png",
+                "img/cards/card7.png", "img/cards/card8.png", "img/cards/card9.png", "img/cards/card10.png", "img/cards/card11.png", "img/cards/card12.png"];
+
+function setPairs(num) {
+    numOfPairs = num;
+}
 
 function createBoard() {
-    var chosenIDs = [];
-    for (var i = 0; i < numOfPairs; i++) {
-        chosenIDs[i] = Math.random() * (i + 1);
-        console.log(chosenIDs[i]);
-    }
+    var chosenIDs = cardIDs.sort(function(){
+        return 0.5 - Math.random();
+    });
+    console.log(chosenIDs.slice(cardIDs, numOfPairs));
 }
 function flipCard() {
     if (lockBoard) return;
