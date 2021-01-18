@@ -1,13 +1,13 @@
 
-var cards = document.querySelectorAll('.memory-card');
+var cards, cardHolder = document.querySelector(".memory-game");
 var hasFlippedCard = false;
 var lockBoard = false;
 var firstCard, secondCard;
 
 var type, numOfPairs = 3;
 var cardIDs = ["card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "card11", "card12"];
-var cardIMGs = ["img/cards/card1.png", "img/cards/card2.png", "img/cards/card3.png", "img/cards/card4.png", "img/cards/card5.png", "img/cards/card6.png",
-                "img/cards/card7.png", "img/cards/card8.png", "img/cards/card9.png", "img/cards/card10.png", "img/cards/card11.png", "img/cards/card12.png"];
+var cardIMGs = ["card1", "card2", "card3", "card4", "card5", "card6",
+                "card7", "card8", "card9", "card10", "card11", "card12"];
 
 function setPairs(num) {
     numOfPairs = num;
@@ -17,7 +17,24 @@ function createBoard() {
     var chosenIDs = cardIDs.sort(function(){
         return 0.5 - Math.random();
     });
-    console.log(chosenIDs.slice(cardIDs, numOfPairs));
+    var chosenIMGs = [];
+    chosenIDs.slice(cardIDs, numOfPairs)
+    for (var i = 0; i < chosenIDs.length; i++) {
+        chosenIMGs.push("img/cards/" + chosenIDs[i] + ".png");
+    }
+    for (var i = 0; i < chosenIDs.length; i++) {
+        var cardFace = document.createElement("img");
+        cardFace.classList.add("front-face");
+        cardFace.setAttribute("src", chosenIMGs[i]);
+        var newCard = document.createElement("div");
+        newCard.classList.add("memory-card");
+        newCard.setAttribute("id", chosenIDs[i]);
+        newCard.appendChild(cardFace);
+        //newCard.innerHTML = "<img class='front-face' src=" + chosenIMGs[i] + ">< img class='back-face' src = 'img/js-badge.svg'>";
+        cardHolder.appendChild(newCard);
+    }
+   
+    console.log(chosenIDs.slice(cardIDs, numOfPairs););
 }
 function flipCard() {
     if (lockBoard) return;
@@ -60,10 +77,10 @@ function resetBoard() {
     [firstCard, secondCard] = [false, false];
 }
 
-(function shuffle() {
+function shuffle() {
     cards.forEach(card => {
         var randomPos = Math.floor(Math.random() * 12);
         card.style.order = randomPos;
     });
-})();
-cards.forEach(card => card.addEventListener('click', flipCard));
+}
+//cards.forEach(card => card.addEventListener('click', flipCard));
