@@ -25,6 +25,43 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "img", "img", "{52CBC7D0-272
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cards", "cards", "{2673D7A5-182C-44FF-A6FB-C9E4866D8962}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{8979A6BC-CFF4-4C7D-8CFC-7517FD992162}"
+	ProjectSection(SolutionItems) = preProject
+		img\images\New Folder\1.jpg = img\images\New Folder\1.jpg
+		img\images\New Folder\10.jpg = img\images\New Folder\10.jpg
+		img\images\New Folder\11.jpg = img\images\New Folder\11.jpg
+		img\images\New Folder\12.jpg = img\images\New Folder\12.jpg
+		img\images\New Folder\13.jpg = img\images\New Folder\13.jpg
+		img\images\New Folder\14.jpg = img\images\New Folder\14.jpg
+		img\images\New Folder\15.jpg = img\images\New Folder\15.jpg
+		img\images\New Folder\16.jpg = img\images\New Folder\16.jpg
+		img\images\New Folder\17.jpg = img\images\New Folder\17.jpg
+		img\images\New Folder\18.jpg = img\images\New Folder\18.jpg
+		img\images\New Folder\19.jpg = img\images\New Folder\19.jpg
+		img\images\New Folder\2.jpg = img\images\New Folder\2.jpg
+		img\images\New Folder\20.jpg = img\images\New Folder\20.jpg
+		img\images\New Folder\21.jpg = img\images\New Folder\21.jpg
+		img\images\New Folder\22.jpg = img\images\New Folder\22.jpg
+		img\images\New Folder\23.jpg = img\images\New Folder\23.jpg
+		img\images\New Folder\24.jpg = img\images\New Folder\24.jpg
+		img\images\New Folder\25.jpg = img\images\New Folder\25.jpg
+		img\images\New Folder\26.jpg = img\images\New Folder\26.jpg
+		img\images\New Folder\27.jpg = img\images\New Folder\27.jpg
+		img\images\New Folder\28.jpg = img\images\New Folder\28.jpg
+		img\images\New Folder\29.jpg = img\images\New Folder\29.jpg
+		img\images\New Folder\3.jpg = img\images\New Folder\3.jpg
+		img\images\New Folder\30.jpg = img\images\New Folder\30.jpg
+		img\images\New Folder\31.jpg = img\images\New Folder\31.jpg
+		img\images\New Folder\32.jpg = img\images\New Folder\32.jpg
+		img\images\New Folder\33.jpg = img\images\New Folder\33.jpg
+		img\images\New Folder\4.jpg = img\images\New Folder\4.jpg
+		img\images\New Folder\5.jpg = img\images\New Folder\5.jpg
+		img\images\New Folder\6.jpg = img\images\New Folder\6.jpg
+		img\images\New Folder\7.jpg = img\images\New Folder\7.jpg
+		img\images\New Folder\8.png = img\images\New Folder\8.png
+		img\images\New Folder\9.jpg = img\images\New Folder\9.jpg
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +69,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{52CBC7D0-2725-4F50-AA89-4E7EBA9E2876} = {D85EE093-334C-4956-9763-EE946E4242FB}
 		{2673D7A5-182C-44FF-A6FB-C9E4866D8962} = {52CBC7D0-2725-4F50-AA89-4E7EBA9E2876}
+		{8979A6BC-CFF4-4C7D-8CFC-7517FD992162} = {52CBC7D0-2725-4F50-AA89-4E7EBA9E2876}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0A03997B-0997-4B2F-8026-6998E5044EC5}

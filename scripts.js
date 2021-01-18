@@ -30,11 +30,12 @@ function createBoard() {
         newCard.classList.add("memory-card");
         newCard.setAttribute("id", chosenIDs[i]);
         newCard.appendChild(cardFace);
+        newCard.addEventListener('click', flipCard);
         //newCard.innerHTML = "<img class='front-face' src=" + chosenIMGs[i] + ">< img class='back-face' src = 'img/js-badge.svg'>";
         cardHolder.appendChild(newCard);
     }
    
-    console.log(chosenIDs.slice(cardIDs, numOfPairs););
+    console.log(chosenIDs.slice(cardIDs, numOfPairs));
 }
 function flipCard() {
     if (lockBoard) return;
@@ -52,7 +53,7 @@ function flipCard() {
 }
 
 function checkForMatch() {
-    var isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+    var isMatch = firstCard === secondCard;
     isMatch ? disableCards() : unflipCards();
 }
 
@@ -83,4 +84,4 @@ function shuffle() {
         card.style.order = randomPos;
     });
 }
-//cards.forEach(card => card.addEventListener('click', flipCard));
+//
