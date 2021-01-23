@@ -4,7 +4,7 @@ var hasFlippedCard = false;
 var lockBoard = false;
 var firstCard, secondCard;
 
-var type, numOfPairs = 3;
+var type, numOfPairs;
 var cardIDs = ["card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "card11", "card12"];
 var cardIMGs = ["card1", "card2", "card3", "card4", "card5", "card6",
                 "card7", "card8", "card9", "card10", "card11", "card12"];
@@ -14,11 +14,12 @@ function setPairs(num) {
 }
 
 function createBoard() {
+    cardHolder.innerHTML = "";
     var chosenIDs = cardIDs.sort(function(){
         return 0.5 - Math.random();
     });
     var chosenIMGs = [];
-    chosenIDs.slice(cardIDs, numOfPairs)
+    chosenIDs = chosenIDs.slice(cardIDs, numOfPairs)
     for (var i = 0; i < chosenIDs.length; i++) {
         chosenIMGs.push("img/cards/" + chosenIDs[i] + ".png");
     }
@@ -26,15 +27,22 @@ function createBoard() {
         var cardFace = document.createElement("img");
         cardFace.classList.add("front-face");
         cardFace.setAttribute("src", chosenIMGs[i]);
+        var cardFaceFront = document.createElement("img");
+        cardFaceFront.classList.add("back-face");
+        cardFaceFront.setAttribute("src", "img/js-badge.png");
         var newCard = document.createElement("div");
         newCard.classList.add("memory-card");
-        newCard.setAttribute("id", chosenIDs[i]);
+        newCard.setAttribute("data-framework", chosenIDs[i]);
         newCard.appendChild(cardFace);
+        newCard.appendChild(cardFaceFront);
         newCard.addEventListener('click', flipCard);
-        //newCard.innerHTML = "<img class='front-face' src=" + chosenIMGs[i] + ">< img class='back-face' src = 'img/js-badge.svg'>";
+        var newCardCopy = newCard.cloneNode(true);
+        newCardCopy.addEventListener('click', flipCard);
         cardHolder.appendChild(newCard);
+        cardHolder.appendChild(newCardCopy);
     }
-   
+    cards = document.querySelectorAll(".memory-card");
+    shuffle();
     console.log(chosenIDs.slice(cardIDs, numOfPairs));
 }
 function flipCard() {
@@ -53,7 +61,7 @@ function flipCard() {
 }
 
 function checkForMatch() {
-    var isMatch = firstCard === secondCard;
+    var isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
     isMatch ? disableCards() : unflipCards();
 }
 
@@ -71,7 +79,7 @@ function unflipCards() {
         secondCard.classList.remove('flip');
 
         resetBoard();
-    }, 0500);
+    }, 1000);
 }
 function resetBoard() {
     [hasFlippedCard, lockBoard] = [false, false];
