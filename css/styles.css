@@ -1,0 +1,70 @@
+body {
+  background: #060ab2;
+  height: 100vh; }
+
+@font-face {
+  font-family: 'UI';
+  src: url("../fonts/KOMIKAX_.ttf"); }
+
+#UI {
+  font-family: 'UI'; }
+
+.button {
+  display: block;
+  width: 150px;
+  margin: 0 auto;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid black;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
+  background-color: #00b9f1;
+  background-image: linear-gradient(to bottom, #00b9f1 0%, #0081b4 100%);
+  border-radius: 5px; }
+  .button:hover {
+    background-color: #0081b4;
+    background-image: linear-gradient(to bottom, #0081b4 0%, #00b9f1 100%); }
+
+.memory-game {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  flex-wrap: wrap;
+  height: 640px;
+  margin: auto;
+  perspective: 1000px;
+  width: 640px; }
+
+.memory-card {
+  width: auto;
+  height: auto;
+  margin: 16px;
+  position: relative;
+  box-shadow: 0 0 20px blue;
+  transform: scale(1);
+  transition: transform .5s;
+  transform-style: preserve-3d; }
+  .memory-card.flip {
+    transform: rotateY(180deg); }
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform .5s; }
+
+.front-face {
+  backface-visibility: hidden;
+  background: #1c7ccc;
+  border-radius: 10px;
+  height: 100%;
+  position: absolute;
+  transform: rotateY(180deg);
+  width: 100%; }
+
+.back-face {
+  backface-visibility: hidden;
+  background: #1c7ccc;
+  border-radius: 10px;
+  height: 100%;
+  position: absolute;
+  width: 100%; }

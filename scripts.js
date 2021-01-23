@@ -4,7 +4,7 @@ var hasFlippedCard = false;
 var lockBoard = false;
 var firstCard, secondCard;
 
-var type, numOfPairs;
+var type, numOfPairs = 0;
 var cardIDs = ["card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "card11", "card12"];
 var cardIMGs = ["card1", "card2", "card3", "card4", "card5", "card6",
                 "card7", "card8", "card9", "card10", "card11", "card12"];
@@ -48,15 +48,16 @@ function createBoard() {
 function flipCard() {
     if (lockBoard) return;
     if (this === firstCard) return;
-    this.classList.add('flip');
+    this.classList.add("flip");
     if (!hasFlippedCard) {
         hasFlippedCard = true;
         firstCard = this;
+        //firstCard.removeEventListener('click', flipCard);
         return;
     }
-
+    
     secondCard = this;
-
+    //secondCard.removeEventListener('click', flipCard);
     checkForMatch();
 }
 

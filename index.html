@@ -5,7 +5,7 @@
     <script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.21.0/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.1.0"></script>
     <title>Memory Game</title>
 
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <script src="./scripts.js"></script>
 </head>
 <body>
@@ -13,10 +13,13 @@
         <img src="img/title.png" />
         <h1>Section Title</h1>
         <div id="cardType">
-            <a href="#" class="button" onclick="createBoard()">Start Game</a>
         </div>
         <div id="numOfPairs">
+            <p href="#" class="button" onclick="setPairs(4)">4 Pairs</p>
+            <p href="#" class="button" onclick="setPairs(5)">5 Pairs</p>
+            <p href="#" class="button" onclick="setPairs(6)">6 Pairs</p>
         </div>
+        <p href="#" class="button" onclick="createBoard()">Start Game</p>
     </div>
     <!--<div id="title"></div>
     <div id="credits"></div>

@@ -1,12 +1,20 @@
 {
   "name": "memory-game",
   "version": "1.0.0",
-  "description": "",
   "main": "scripts.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "scss": "node-sass -w sass/ -o css/"
-    },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass -w scss/ -o css/"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AidanRM6223/Memory-Game.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AidanRM6223/Memory-Game/issues"
+  },
+  "homepage": "https://github.com/AidanRM6223/Memory-Game#readme",
+  "description": ""
 }
