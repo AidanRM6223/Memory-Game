@@ -16,19 +16,30 @@ body {
 
 #UI {
     font-family: 'UI';
-    
+    align-content: center;
 }
-
+#titleIMG {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 .button {
     
     padding: 16px;
     color: #fff !important;
     //text-transform: uppercase;
     text-decoration: none;
-    text-align: center;
+    width: 10vw;
     background: #60a3bc;
     border-radius: 50px;
-    display: inline-block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    width: 25%;
+    display: block;
     border: none;
     transition: all 0.25s ease 0s;
 
@@ -43,17 +54,20 @@ body {
 .memory-game {
     display: flex;
     flex-wrap: wrap;
-    text-align: center;
-    max-width: 90%;
-    margin: 0 auto;
+    //text-align: center;
+    max-width: 100%;
+    width: 75%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
     padding: 16px;
 }
 
 .memory-card {
     width: 100px;
-    height: 140px;
+    height: 135px;
     margin: 16px;
-    box-shadow: 0 0 20px blue;
+    //box-shadow: 0 0 20px #00b9f1;
     transform: scale(1);
     transition: transform .5s;
     transform-style: preserve-3d;

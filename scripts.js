@@ -14,6 +14,7 @@ function setPairs(num) {
     numOfPairs = num;
 }
 
+numOfPairs = 6;
 function createBoard() {
     cardHolder.innerHTML = "";
     var chosenIDs = cardIDs.sort(function(){
@@ -46,6 +47,7 @@ function createBoard() {
     shuffle();
     console.log(chosenIDs.slice(cardIDs, numOfPairs));
 }
+createBoard();
 function flipCard() {
     if (lockBoard) return;
     if (this === firstCard) return;
