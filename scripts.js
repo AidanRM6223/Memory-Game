@@ -1,4 +1,5 @@
 
+
 var cards, cardHolder = document.querySelector(".memory-game");
 var hasFlippedCard = false;
 var lockBoard = false;

@@ -10,33 +10,33 @@ body {
   font-family: 'UI'; }
 
 .button {
-  display: block;
-  width: 150px;
-  margin: 0 auto;
-  height: 30px;
-  line-height: 30px;
-  border: 1px solid black;
-  color: white;
+  padding: 16px;
+  color: #fff !important;
   text-decoration: none;
   text-align: center;
-  text-shadow: -1px -1px 0 #000000, 1px -1px 0 #000000, -1px 1px 0 #000000, 1px 1px 0 #000000;
-  background-color: #00b9f1;
-  background-image: linear-gradient(to bottom, #00b9f1 0%, #0081b4 100%);
-  border-radius: 5px; }
+  background: #60a3bc;
+  border-radius: 50px;
+  display: inline-block;
+  border: none;
+  transition: all 0.25s ease 0s; }
   .button:hover {
-    background-color: #0081b4;
-    background-image: linear-gradient(to bottom, #0081b4 0%, #00b9f1 100%); }
+    text-shadow: 0px 0px 6px white;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+    transition: all 0.25s ease 0s; }
 
 .memory-game {
   display: flex;
-  margin: auto;
   flex-wrap: wrap;
-  align-content: center; }
+  text-align: center;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 16px; }
 
 .memory-card {
-  width: 220px;
-  margin: 8px;
-  position: relative;
+  width: 100px;
+  height: 140px;
+  margin: 16px;
   box-shadow: 0 0 20px blue;
   transform: scale(1);
   transition: transform .5s;
