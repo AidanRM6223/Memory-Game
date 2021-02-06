@@ -8,25 +8,22 @@
     <script src="./scripts.js"></script>
 </head>
 <body>
+    <div id="titleIMG"><img src="img/title.png" /></div>
+
     <div id="UI">
-        <img id="titleIMG" src="img/title.png" />
-        <div id="cardType">
+        <div id="options">
+            <input type="submit" class="button" value="Animals" onclick="setType('animal', this)" />
+            <input type="submit" class="button" value="Shapes" onclick="setType('shape', this)" />
+            <input type="range" min="5" max="8" class="slider" value="4" step=".01" id="numSlider" oninput="setPairs(this.value)" />
+            <p id="numValue"></p>
         </div>
-        <div id="numOfPairs">
-            <p class="button" onclick="setPairs(4)">4 Pairs</p>
-            <p class="button" onclick="setPairs(5)">5 Pairs</p>
-            <p class="button" onclick="setPairs(6)">6 Pairs</p>
-        </div>
-        <p href="#" class="button" onclick="createBoard()">Start Game</p>
+        <p href="#" class="button" style="display: none;" id="StartGame" onclick="createBoard()">Start Game</p>
+        <p href="#" class="button" style="display: none;" id="ResetGame" onclick="resetGame()">Restart</p>
     </div>
-    <!--<div id="title"></div>
-    <div id="credits"></div>
-    <div id="start"></div>-->
-    <section class="memory-game">
-    </section>
 
+    <div class="memory-game">
+    </div>
     <script src="./scripts.js"></script>
-
 
 </body>
 </html>

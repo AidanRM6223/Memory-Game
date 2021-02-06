@@ -5,8 +5,8 @@ $mediumblue_060AB2: #060ab2;
 $steelblue_0081b4: #0081b4;
 
 body {
+    margin-top: 75px;
     background: $mediumblue_060AB2;
-    height: 100vh;
 }
 
 @font-face {
@@ -17,15 +17,37 @@ body {
 #UI {
     font-family: 'UI';
     align-content: center;
-}
-#titleIMG {
+    justify-content: center;
     display: block;
+    color: #fff;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    text-align: center;
+
+    input {
+        font-family: UI;
+    }
 }
+
+#titleIMG {
+    left:0;
+    width: 100%;
+    display: block;
+    top: 0;
+    position: fixed;
+    background-color: dodgerblue;
+    z-index:1;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+}
+
 .button {
-    
     padding: 16px;
     color: #fff !important;
     //text-transform: uppercase;
@@ -34,20 +56,21 @@ body {
     background: #60a3bc;
     border-radius: 50px;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    
     margin-top: 16px;
     margin-bottom: 16px;
     width: 25%;
-    display: block;
+
+    display: inline-block;
     border: none;
     transition: all 0.25s ease 0s;
 
     &:hover {
         text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-        -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-        -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+        -webkit-box-shadow: 0px 5px 40px -10px #80dfff;
+        -moz-box-shadow: 0px 5px 40px -10px #80dfff;
         transition: all 0.25s ease 0s;
+        background: #00b8e6;
     }
 }
 
@@ -65,20 +88,16 @@ body {
 
 .memory-card {
     width: 100px;
-    height: 135px;
+    height: 134px;
     margin: 16px;
-    //box-shadow: 0 0 20px #00b9f1;
+    box-shadow: 0 0 20px #060ab2;
     transform: scale(1);
     transition: transform .5s;
     transform-style: preserve-3d;
+    border-radius: 10px;
 
     &.flip {
         transform: rotateY(180deg);
-    }
-
-    &:active {
-        transform: scale(.97);
-        transition: transform .5s;
     }
 
     img {
@@ -87,9 +106,49 @@ body {
         position: absolute;
     }
 }
+/* The slider itself */
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    appearance: none;
+    -webkit-appearance: none; /* Override default CSS styles */
+    width: 25%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    margin: 0 auto;
+    outline: none; /* Remove outline */
+    opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border-radius: 30px;
+    /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #1c7ccc; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+        border-radius: 30px;
+        transition: 0.25s;
+        &:hover {
+            box-shadow: 0px 0px 0px 4px rgba(51, 153, 204, 0.49);
+        }
+    }
+
+    &::-moz-range-thumb {
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #4CAF50; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+        border-radius: 30px;
+    }
+}
 
 .front-face {
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     background: $cornflowerblue_1C7CCC;
     border-radius: 10px;
     height: 100%;
@@ -100,9 +159,22 @@ body {
 
 .back-face {
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     background: $cornflowerblue_1C7CCC;
     border-radius: 10px;
     height: 100%;
     position: absolute;
     width: 100%;
+}
+@media screen and (min-width: 850px) {
+  #titleIMG img {
+    width: 25%;
+  }
+  
+}@media screen and (max-width: 850px) {
+    .memory-card {
+        width: 75px;
+        height: 109px;
+    }
+  
 }

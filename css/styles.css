@@ -1,6 +1,6 @@
 body {
-  background: #060ab2;
-  height: 100vh; }
+  margin-top: 75px;
+  background: #060ab2; }
 
 @font-face {
   font-family: 'UI';
@@ -8,13 +8,31 @@ body {
 
 #UI {
   font-family: 'UI';
-  align-content: center; }
-
-#titleIMG {
+  align-content: center;
+  justify-content: center;
   display: block;
+  color: #fff;
   margin-left: auto;
   margin-right: auto;
-  width: 50%; }
+  text-align: center; }
+  #UI input {
+    font-family: UI; }
+
+#titleIMG {
+  left: 0;
+  width: 100%;
+  display: block;
+  top: 0;
+  position: fixed;
+  background-color: dodgerblue;
+  z-index: 1;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px; }
+  #titleIMG img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; }
 
 .button {
   padding: 16px;
@@ -24,19 +42,18 @@ body {
   background: #60a3bc;
   border-radius: 50px;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 16px;
   margin-bottom: 16px;
   width: 25%;
-  display: block;
+  display: inline-block;
   border: none;
   transition: all 0.25s ease 0s; }
   .button:hover {
     text-shadow: 0px 0px 6px white;
-    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-    transition: all 0.25s ease 0s; }
+    -webkit-box-shadow: 0px 5px 40px -10px #80dfff;
+    -moz-box-shadow: 0px 5px 40px -10px #80dfff;
+    transition: all 0.25s ease 0s;
+    background: #00b8e6; }
 
 .memory-game {
   display: flex;
@@ -50,23 +67,74 @@ body {
 
 .memory-card {
   width: 100px;
-  height: 135px;
+  height: 134px;
   margin: 16px;
+  box-shadow: 0 0 20px #060ab2;
   transform: scale(1);
   transition: transform .5s;
-  transform-style: preserve-3d; }
+  transform-style: preserve-3d;
+  border-radius: 10px; }
   .memory-card.flip {
     transform: rotateY(180deg); }
-  .memory-card:active {
-    transform: scale(0.97);
-    transition: transform .5s; }
   .memory-card img {
     width: 100%;
     height: auto;
     position: absolute; }
 
+/* The slider itself */
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  appearance: none;
+  -webkit-appearance: none;
+  /* Override default CSS styles */
+  width: 25%;
+  /* Full-width */
+  height: 25px;
+  /* Specified height */
+  background: #d3d3d3;
+  /* Grey background */
+  margin: 0 auto;
+  outline: none;
+  /* Remove outline */
+  opacity: 1;
+  /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s;
+  /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+  border-radius: 30px;
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ }
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: #1c7ccc;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+    border-radius: 30px;
+    transition: 0.25s; }
+    .slider::-webkit-slider-thumb:hover {
+      box-shadow: 0px 0px 0px 4px rgba(51, 153, 204, 0.49); }
+  .slider::-moz-range-thumb {
+    width: 25px;
+    /* Set a specific slider handle width */
+    height: 25px;
+    /* Slider handle height */
+    background: #4CAF50;
+    /* Green background */
+    cursor: pointer;
+    /* Cursor on hover */
+    border-radius: 30px; }
+
 .front-face {
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   background: #1c7ccc;
   border-radius: 10px;
   height: 100%;
@@ -76,8 +144,18 @@ body {
 
 .back-face {
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   background: #1c7ccc;
   border-radius: 10px;
   height: 100%;
   position: absolute;
   width: 100%; }
+
+@media screen and (min-width: 850px) {
+  #titleIMG img {
+    width: 25%; } }
+
+@media screen and (max-width: 850px) {
+  .memory-card {
+    width: 75px;
+    height: 109px; } }

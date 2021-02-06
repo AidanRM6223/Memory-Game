@@ -4,26 +4,59 @@ var cards, cardHolder = document.querySelector(".memory-game");
 var hasFlippedCard = false;
 var lockBoard = false;
 var firstCard, secondCard;
-
-var type, numOfPairs = 0;
-var cardIDs = ["card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "card11", "card12"];
+var cardType = null, numOfPairs;
+var cardIDs = ["card1", "card2", "card3", "card4", "card5", "card6",
+    "card7", "card8", "card9", "card10", "card11", "card12"];
 var cardIMGs = ["card1", "card2", "card3", "card4", "card5", "card6",
-                "card7", "card8", "card9", "card10", "card11", "card12"];
-
-function setPairs(num) {
-    numOfPairs = num;
+    "card7", "card8", "card9", "card10", "card11", "card12"];
+var startButton = document.getElementById("StartGame");
+var resetButton = document.getElementById("ResetGame");
+var typeButton;
+window.onload = function () {
+    var numOfPairsSlider = document.getElementById("numSlider");
+    document.getElementById("numValue").innerHTML = numOfPairsSlider.value + " Pairs";
 }
-
-numOfPairs = 6;
-function createBoard() {
+function setPairs(num) {
+    numOfPairs = Math.round(num *1);
+    document.getElementById("numValue").innerHTML = numOfPairs + " Pairs";
+    if (cardType != null) {
+        startButton.style.visibility = "visible";
+    }
+}
+function resetGame() {
     cardHolder.innerHTML = "";
-    var chosenIDs = cardIDs.sort(function(){
+    document.getElementById("options").style.display = "block";
+    startButton.style.display = "none";
+    resetButton.style.display = "none";
+    typeButton.style.backgroundColor = "#60a3bc";
+    cardType = null;
+}
+function setType(type, _this) {
+    _this.style.backgroundColor = "#00b8e6";
+    typeButton = _this;
+    cardType = type;
+    if (numOfPairs > 0) {
+        startButton.style.display = "inline-block";
+    }
+}
+numOfPairs = 4;
+function createBoard() {
+    document.getElementById("options").style.display = "none";
+    cardHolder.innerHTML = "";
+    resetButton.style.display = "inline-block";
+    startButton.style.display = "none";
+    
+
+    var chosenIDs = cardIDs.sort(function () {
         return 0.5 - Math.random();
     });
     var chosenIMGs = [];
     chosenIDs = chosenIDs.slice(cardIDs, numOfPairs)
     for (var i = 0; i < chosenIDs.length; i++) {
-        chosenIMGs.push("img/cards/" + chosenIDs[i] + ".png");
+        if (cardType == "shape")
+            chosenIMGs.push("img/cards/shapes/" + chosenIDs[i] + ".png");
+        else if (cardType == "animal")
+            chosenIMGs.push("img/cards/animals/" + chosenIDs[i] + ".png");
     }
     for (var i = 0; i < chosenIDs.length; i++) {
         var cardFace = document.createElement("img");
@@ -31,7 +64,7 @@ function createBoard() {
         cardFace.setAttribute("src", chosenIMGs[i]);
         var cardFaceFront = document.createElement("img");
         cardFaceFront.classList.add("back-face");
-        cardFaceFront.setAttribute("src", "img/js-badge.png");
+        cardFaceFront.setAttribute("src", "img/frontFace.png");
         var newCard = document.createElement("div");
         newCard.classList.add("memory-card");
         newCard.setAttribute("data-framework", chosenIDs[i]);
@@ -39,7 +72,7 @@ function createBoard() {
         newCard.appendChild(cardFaceFront);
         newCard.addEventListener('click', flipCard);
         var newCardCopy = newCard.cloneNode(true);
-        newCardCopy.addEventListener('click', flipCard);
+        newCardCopy.addEventListener('click', flipCard, { passive: false });
         cardHolder.appendChild(newCard);
         cardHolder.appendChild(newCardCopy);
     }
@@ -47,20 +80,26 @@ function createBoard() {
     shuffle();
     console.log(chosenIDs.slice(cardIDs, numOfPairs));
 }
-createBoard();
 function flipCard() {
+
     if (lockBoard) return;
     if (this === firstCard) return;
-    this.classList.add("flip");
+    if (!this.classList.contains("flip")) {
+        this.classList.add("flip");
+
+        console.log("FLIP");
+    }
+
     if (!hasFlippedCard) {
         hasFlippedCard = true;
         firstCard = this;
-        //firstCard.removeEventListener('click', flipCard);
+        firstCard.removeEventListener('click', flipCard, { passive: false });
         return;
     }
-    
+
     secondCard = this;
-    //secondCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard, { passive: false });
+    console.log("Remove click");
     checkForMatch();
 }
 
@@ -81,7 +120,8 @@ function unflipCards() {
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
-
+        firstCard.addEventListener('click', flipCard, { passive: false });
+        secondCard.addEventListener('click', flipCard, { passive: false });
         resetBoard();
     }, 1000);
 }
